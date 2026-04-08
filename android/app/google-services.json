@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1098835692511",
+    "project_id": "devsync-19fd9",
+    "storage_bucket": "devsync-19fd9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098835692511:android:de000e1237ad0b5239126a",
+        "android_client_info": {
+          "package_name": "com.example.flutter_project_management"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2lu2S3jZKoWfGGBxJcS4TBZe5tniVkYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
