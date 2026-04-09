@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_theme.dart';
-import '../../auth/providers/auth_provider.dart';
 import '../../projects/models/project_model.dart';
 import '../../projects/services/project_service.dart';
 import '../models/task_model.dart';
@@ -173,7 +172,7 @@ class _AddEditTaskScreenState extends State<AddEditTaskScreen> {
                 _label('Status'),
                 const SizedBox(height: 8),
                 DropdownButtonFormField<String>(
-                  value: _status,
+                  initialValue: _status,
                   decoration: const InputDecoration(),
                   items: _statuses
                       .map((s) => DropdownMenuItem(

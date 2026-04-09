@@ -2,17 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../features/auth/providers/auth_provider.dart';
-import '../models/project_model.dart';
 import '../providers/project_provider.dart';
-
-const List<String> _roles = [
-  'Frontend Lead',
-  'Backend Dev',
-  'UI Designer',
-  'Database Admin',
-  'Project Manager',
-  'QA Engineer',
-];
 
 class AddProjectScreen extends StatefulWidget {
   const AddProjectScreen({super.key});
