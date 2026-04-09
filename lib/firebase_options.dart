@@ -51,9 +51,9 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'YOUR_ANDROID_API_KEY',
-    appId: 'YOUR_ANDROID_APP_ID',
-    messagingSenderId: 'YOUR_SENDER_ID',
+    apiKey: 'AIzaSyA2lu2S3jZKoWfGGBxJcS4TBZe5tniVkYw',
+    appId: '1:1098835692511:android:de000e1237ad0b5239126a',
+    messagingSenderId: '1098835692511',
     projectId: 'devsync-19fd9',
     storageBucket: 'devsync-19fd9.firebasestorage.app',
   );
