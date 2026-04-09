@@ -33,7 +33,6 @@ class TaskService {
               : i + chunkSize);
       final snap = await _tasks
           .where('projectId', whereIn: chunk)
-          .orderBy('dueDate')
           .get();
       results.addAll(snap.docs.map((d) => TaskModel.fromFirestore(d)));
     }

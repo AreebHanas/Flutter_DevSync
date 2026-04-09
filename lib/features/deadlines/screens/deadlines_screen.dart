@@ -30,23 +30,34 @@ class _DeadlinesScreenState extends State<DeadlinesScreen> {
   }
 
   Future<void> _loadData() async {
-    final uid =
-        context.read<AuthProvider>().user?.uid ?? '';
-    final pp = context.read<ProjectProvider>();
-    await pp.loadUserProjects(uid);
+    try {
+      final uid =
+          context.read<AuthProvider>().user?.uid ?? '';
+      final pp = context.read<ProjectProvider>();
+      await pp.loadUserProjects(uid);
 
-    final projects = pp.projects;
-    final ids = projects.map((p) => p.id).toList();
+      final projects = pp.projects;
+      final ids = projects.map((p) => p.id).toList();
 
-    final tasks =
-        await context.read<TaskProvider>().getTasksForProjects(ids);
+      final tasks =
+          await context.read<TaskProvider>().getTasksForProjects(ids);
 
-    if (mounted) {
-      setState(() {
-        _projects = projects;
-        _tasks = tasks;
-        _loading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _projects = projects;
+          _tasks = tasks;
+          _loading = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _loading = false;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to load deadlines: $e')),
+        );
+      }
     }
   }
 
@@ -89,6 +100,7 @@ class _DeadlinesScreenState extends State<DeadlinesScreen> {
           children: [
             // Purple header
             Container(
+              width: double.infinity,
               color: AppColors.primary,
               padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
               child: const Column(

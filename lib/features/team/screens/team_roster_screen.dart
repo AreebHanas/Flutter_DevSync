@@ -117,6 +117,7 @@ class _TeamRosterScreenState extends State<TeamRosterScreen> {
           children: [
             // Purple header
             Container(
+              width: double.infinity,
               color: AppColors.primary,
               padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
               child: Column(
