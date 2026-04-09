@@ -5,18 +5,13 @@ import '../services/task_service.dart';
 class TaskProvider extends ChangeNotifier {
   final TaskService _service = TaskService();
 
-  List<TaskModel> _tasks = [];
-  bool _isLoading = false;
+  final List<TaskModel> _tasks = [];
+  final bool _isLoading = false;
   String? _errorMessage;
 
   List<TaskModel> get tasks => _tasks;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
-
-  void _setLoading(bool v) {
-    _isLoading = v;
-    notifyListeners();
-  }
 
   Stream<List<TaskModel>> watchProjectTasks(String projectId) {
     return _service.watchProjectTasks(projectId);
